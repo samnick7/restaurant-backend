@@ -8,6 +8,7 @@ const PORT = 3000;
 app.use(cors());
 app.use(bodyParser.json());
 
+mongoose.connect(process.env.MONGO_URI)
 mongoose.connect('mongodb://localhost:27017/restaurantDB', {
   useNewUrlParser: true,
   useUnifiedTopology: true
