@@ -8,7 +8,7 @@ const MONGO_URI = "mongodb+srv://sam-nick:<db_password>@cluster1.we4olul.mongodb
 app.use(cors());
 app.use(bodyParser.json());
 
-mongoose.connect(process.env.MONGO_URI)
+mongoose.connect(MONGO_URI)
 .then(() => console.log('Connected to MongoDB'))
 .catch(err => console.error('MongoDB connection error:', err));
 
