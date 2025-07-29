@@ -4,16 +4,13 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const app = express();
 const PORT = 3000;
-
+const MONGO_URI = mongodb+srv://sam-nick:<db_password>@cluster1.we4olul.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1 ;
 app.use(cors());
 app.use(bodyParser.json());
 
 mongoose.connect(process.env.MONGO_URI)
-mongoose.connect('mongodb://localhost:27017/restaurantDB', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-}).then(() => console.log('Connected to MongoDB'))
-  .catch(err => console.error('MongoDB connection error:', err));
+.then(() => console.log('Connected to MongoDB'))
+.catch(err => console.error('MongoDB connection error:', err));
 
 // Mongoose Schema & Model
 const subscriberSchema = new mongoose.Schema({
